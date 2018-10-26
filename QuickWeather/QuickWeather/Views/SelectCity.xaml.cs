@@ -37,23 +37,26 @@ namespace QuickWeather.Views
             this.lvSuggestions.ItemTapped += LvSuggestions_ItemTapped;
         }
 
-        private void LvSuggestions_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void LvSuggestions_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var obj = e.Item as City;
 
-            this.displayWeather(obj.Id);
+            var dw = new DisplayWeaher(obj.Id);
+
+            await this.Navigation.PushModalAsync(dw);
         }
 
-        private async void displayWeather(int cityId)
+        private void displayWeather(int cityId)
         {
             var dw = new DisplayWeaher(cityId);
 
-            await this.Navigation.PushAsync(dw);
+            this.Navigation.PushAsync(dw);
         }
 
         private void TbCity_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.cityList.Suggestion(e.NewTextValue);   
+            this.cityList.Suggestion(e.NewTextValue);
+            //this.lvSuggestions.ItemsSource = this.cityList.SuggestedCities;
         }
     }
 }

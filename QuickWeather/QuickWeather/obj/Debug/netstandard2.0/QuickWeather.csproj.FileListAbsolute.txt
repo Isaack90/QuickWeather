@@ -2,7 +2,6 @@ C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\bin\Debug\net
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\bin\Debug\netstandard2.0\QuickWeather.dll
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\QuickWeather.csprojAssemblyReference.cache
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\QuickWeather.csproj.CoreCompileInputs.cache
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\QuickWeather.AssemblyInfoInputs.cache
 C:\Users\black\source\repos\QuickWeather\QuickWeather\QuickWeather\obj\Debug\netstandard2.0\QuickWeather.AssemblyInfo.cs

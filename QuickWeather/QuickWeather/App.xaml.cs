@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickWeather.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace QuickWeather
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SelectCity();
         }
 
         protected override void OnStart()

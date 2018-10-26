@@ -13,12 +13,12 @@ namespace QuickWeather.Actions
     public class CityList
     {
         public List<City> Cities { get; set; }
-        public List<City> SuggestedCities { get; set; }
+        public ObservableCollection<City> SuggestedCities { get; set; }
 
         public CityList()
         {
             this.Cities = new List<City>();
-            this.SuggestedCities = new List<City>();
+            this.SuggestedCities = new ObservableCollection<City>();
 
             this.loadCityList();
         }
@@ -33,14 +33,21 @@ namespace QuickWeather.Actions
                 .ToList());
 
             this.SuggestedCities.Clear();
-            this.SuggestedCities.AddRange(lstCities.GetRange(0, 10));
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (!this.SuggestedCities.Contains(lstCities[i]))
+                {
+                    this.SuggestedCities.Add(lstCities[i]);
+                }
+            }
         }
 
         private void loadCityList()
         {
             var assm = IntrospectionExtensions.GetTypeInfo(typeof(CityList)).Assembly;
 
-            Stream stream = assm.GetManifestResourceStream("QuickWeather.cityList.json");
+            Stream stream = assm.GetManifestResourceStream("QuickWeather.Resources.cityList.json");
 
             string jsonList = string.Empty;
 
@@ -52,6 +59,8 @@ namespace QuickWeather.Actions
             var lst = JsonConvert.DeserializeObject<List<City>>(jsonList);
 
             this.Cities = lst.OrderBy(o => o.Name).ToList();
+
+            
         }
     }
 }

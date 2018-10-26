@@ -3,6 +3,7 @@ using QuickWeather.Objects;
 using QuickWeather.Objects.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -49,9 +50,9 @@ namespace QuickWeather.Actions
             return cWeatherModel;
         }
 
-        public List<WeatherModel> GetForecaseList()
+        public ObservableCollection<WeatherModel> GetForecaseList()
         {
-            var forecastList = new List<WeatherModel>();
+            var forecastList = new ObservableCollection<WeatherModel>();
 
             for (int i =1; i == 4; i++)
             {
